@@ -14,4 +14,4 @@ commonLabels:
 
 images:
 - name: wil42/playground
-  newTag: v1
+  newTag: v2
