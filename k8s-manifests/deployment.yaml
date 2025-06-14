@@ -1,39 +1,39 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: playground-app
-  namespace: dev
-  labels:
-    app: playground
-    version: v1
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: playground-app
+    namespace: dev
+    labels:
       app: playground
-  template:
-    metadata:
-      labels:
+      version: v2
+  spec:
+    replicas: 2
+    selector:
+      matchLabels:
         app: playground
-        version: v1
-    spec:
-      containers:
-      - name: playground
-        image: wil42/playground:v1
-        ports:
-        - containerPort: 8888
-        # env:
-        # - name: VERSION
-        #   value: "v1"
-        # livenessProbe:
-        #   httpGet:
-        #     path: /
-        #     port: 8888
-        #   initialDelaySeconds: 30
-        #   periodSeconds: 10
-        # readinessProbe:
-        #   httpGet:
-        #     path: /
-        #     port: 8888
-        #   initialDelaySeconds: 5
-        #   periodSeconds: 5
+    template:
+      metadata:
+        labels:
+          app: playground
+          version: v2
+      spec:
+        containers:
+        - name: playground
+          image: wil42/playground:v2
+          ports:
+          - containerPort: 8888
+          # env:
+          # - name: VERSION
+          #   value: "v2"
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: 8888
+          #   initialDelaySeconds: 30
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: 8888
+          #   initialDelaySeconds: 5
+          #   periodSeconds: 5
