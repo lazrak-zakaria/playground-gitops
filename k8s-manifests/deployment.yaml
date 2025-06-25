@@ -5,7 +5,7 @@ metadata:
   namespace: dev
   labels:
     app: playground
-    version: v1
+    version: v2
 spec:
   replicas: 1
   selector:
@@ -15,10 +15,10 @@ spec:
     metadata:
       labels:
         app: playground
-        version: v1
+        version: v2
     spec:
       containers:
       - name: playground
-        image: wil42/playground:v1
+        image: wil42/playground:v2
         ports:
         - containerPort: 8888
